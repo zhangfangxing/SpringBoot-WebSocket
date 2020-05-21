@@ -9,4 +9,4 @@ SpringBoot整合WebSocket，
 欢迎大家来到我的QQ群：1074468813   一起来交流学习。
 个人公众号地址：北漂程序员的吐槽人生（beipiaochengxuyuan）
 出版书籍为电子工业出版社：《微服务分布式架构基础与实战——基于Spring Boot + Spring Cloud》
-各类网站均有销售啊~~欢迎大家购买~~
+各类网站均有销售啊~~
