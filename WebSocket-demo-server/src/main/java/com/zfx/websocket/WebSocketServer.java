@@ -16,6 +16,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
 @ServerEndpoint("/websocket/{sid}")
+//@ServerEndpoint("/")
 @Component
 public class WebSocketServer {
 
@@ -27,7 +28,7 @@ public class WebSocketServer {
     private static CopyOnWriteArraySet<WebSocketServer> webSocketSet = new CopyOnWriteArraySet<WebSocketServer>();
 
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
-    private Session session;
+    public static Session session;
 
     //接收sid
     private String sid="";

@@ -1,9 +1,14 @@
 package com.zfx.websocket;
 
+import java.util.concurrent.TimeUnit;
+
+import com.alibaba.fastjson.JSONObject;
+
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
+import io.netty.channel.EventLoop;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
@@ -65,7 +70,6 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object>{
                 System.out.println("receive close frame");
                 ch.close();
             }
-
         }
     }
 
@@ -99,7 +103,12 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object>{
      */
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("连接异常："+cause.getMessage());
-        ctx.close();
+        JSONObject json = new JSONObject();
+        json.put("cmd", "13");
+        json.put("hbbyte", "1");
+        //{"cmd":"13","hbbyte":"1"}
+        ClientByNetty.sengMessage(json.toJSONString());
+//        ctx.close();
     }
 
     public void handlerAdded(ChannelHandlerContext ctx) {
