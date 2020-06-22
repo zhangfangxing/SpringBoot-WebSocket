@@ -15,8 +15,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
-@ServerEndpoint("/websocket/{sid}")
-//@ServerEndpoint("/")
+//@ServerEndpoint("/websocket/{sid}")
+@ServerEndpoint("/")
 @Component
 public class WebSocketServer {
 
