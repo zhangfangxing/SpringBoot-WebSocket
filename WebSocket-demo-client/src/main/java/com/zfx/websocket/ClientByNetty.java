@@ -32,7 +32,7 @@ import io.netty.handler.logging.LoggingHandler;
  */
 public class ClientByNetty {
 	
-	private static String url = "ws://localhost:8080";
+	private static String url = "ws://localhost:8080/websocket/mysid";
 //	private static String url = "ws://localhost:20201";
 	
 	public static void main(String[] args) {
