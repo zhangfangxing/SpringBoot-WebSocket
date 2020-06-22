@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebSocketController {
 
-	
 	@RequestMapping("/websocket/get")
 	public String webSocketSession(){
 		return null;
